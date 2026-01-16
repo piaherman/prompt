@@ -33,7 +33,7 @@ print(f"Running zero-shot classification with model: {model_name}\n")
 
 # 5. Zagon
 for item in test_data:
-    prompt = zero_shot_prompt(item["text"])
+    prompt = zero_shot_prompt(item["text"])  #ali skrajšam besedili npr. [:500]?
     response = ollama.chat(
         model=model_name,
         messages=[{"role": "user", "content": prompt}],
@@ -84,5 +84,6 @@ results_df = pd.DataFrame({
 })
 print(y_true)
 print(y_pred)
-results_df.to_csv("../results/zero_shot_ministral-3:3b.csv", index=False)
-print("\nResults saved to results/zero_shot_ministral-3:3b.csv")
+print(results_df)
+results_df.to_csv("../results/zero_shot_llama3.2.3b.csv", index=False)
+print("\nResults saved to results/zero_shot_llama3.2.3b.csv")
