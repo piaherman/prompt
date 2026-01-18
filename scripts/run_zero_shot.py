@@ -64,7 +64,7 @@ def zero_shot_prompt(text):
 
 # 3. Naloži podatke
 dataset = load_dataset("fancyzhx/ag_news")
-test_data = dataset["test"].shuffle(seed=42).select(range(10))
+test_data = dataset["test"].shuffle(seed=42).select(range(100))
 
 # 4. Model
 model_name = "llama3.2:3b"
@@ -76,7 +76,7 @@ print(f"Running zero-shot classification with model: {model_name}\n")
 
 # 5. Zagon
 for item in test_data:
-    prompt = zero_shot_prompt(item["text"])  #ali skrajšam besedili npr. [:500]?
+    prompt = zero_shot_prompt(item["text"])
 
     messages = [
         msg for msg in [
@@ -116,7 +116,7 @@ filtered = [(t, p) for t, p in zip(y_true, y_pred) if p != "Unknown"]
 y_true_f, y_pred_f = zip(*filtered)
 
 # 7. Matrike
-report = classification_report(y_true_f, y_pred_f, target_names=labels)
+report = classification_report(y_true_f, y_pred_f)
 accuracy = accuracy_score(y_true_f, y_pred_f)
 precision = precision_score(y_true_f, y_pred_f, average="macro")
 recall = recall_score(y_true_f, y_pred_f, average="macro")
