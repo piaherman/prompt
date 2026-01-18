@@ -54,6 +54,8 @@ Answer with only the category name."""
 # Izberi prompt
 # Opcije: "simple", "intermediate", "advanced"
 PROMPT_CHOICE = "simple"
+# Nastavi na False, če nočeš vključiti system prompta
+INCLUDE_SYSTEM_PROMPT = True  
 
 # 3. Zero-shot prompt funkcija
 def zero_shot_prompt(text):
@@ -75,15 +77,17 @@ print(f"Running zero-shot classification with model: {model_name}\n")
 # 5. Zagon
 for item in test_data:
     prompt = zero_shot_prompt(item["text"])  #ali skrajšam besedili npr. [:500]?
+
+    messages = [
+        msg for msg in [
+            {"role": "system", "content": SYSTEM_PROMPT} if INCLUDE_SYSTEM_PROMPT else None,
+            {"role": "user", "content": prompt}
+        ] if msg is not None
+    ]
+
     response = ollama.chat(
         model=model_name,
-        messages=[
-            # Če ne rabiš system_prompta pri vseh primerih, ga lahko odstraniš,
-            # Samo zakomentiraj naslednjo vrstico
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt}
-        ],
-
+        messages=messages,
     )
     print(f"Chat response: {response.message}\n")
 
@@ -133,6 +137,7 @@ results_data = {
     "metadata": {
         "model": model_name,
         "prompt_choice": PROMPT_CHOICE,
+        "include_system_prompt": INCLUDE_SYSTEM_PROMPT,
         "timestamp": timestamp,
         "total_samples": len(y_true),
         "valid_predictions": len(y_true_f),
@@ -160,6 +165,7 @@ report_file = f"../results/{base_filename}_report.txt"
 with open(report_file, 'w') as f:
     f.write(f"Model: {model_name}\n")
     f.write(f"Prompt Choice: {PROMPT_CHOICE}\n")
+    f.write(f"Include System Prompt: {INCLUDE_SYSTEM_PROMPT}\n")
     f.write(f"Timestamp: {timestamp}\n")
     f.write(f"\n{'='*60}\n")
     f.write(f"CLASSIFICATION REPORT\n")
