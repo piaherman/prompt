@@ -1,0 +1,32 @@
+Model: llama3.2:3b
+Prompt Choice: simple
+Include System Prompt: True
+Timestamp: 20260122_192523
+
+============================================================
+CLASSIFICATION REPORT
+============================================================
+
+              precision    recall  f1-score   support
+
+    Business       0.59      0.71      0.65        31
+    Sci/Tech       0.75      0.16      0.26        19
+      Sports       0.92      0.41      0.56        27
+       World       0.41      0.86      0.56        22
+
+    accuracy                           0.56        99
+   macro avg       0.67      0.53      0.51        99
+weighted avg       0.67      0.56      0.53        99
+
+
+============================================================
+SUMMARY METRICS
+============================================================
+Accuracy : 0.5556
+Precision: 0.6686
+Recall   : 0.5347
+F1-score : 0.5077
+
+Total samples: 100
+Valid predictions: 99
+Unknown predictions: 1

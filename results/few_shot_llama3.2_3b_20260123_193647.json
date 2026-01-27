@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "model": "llama3.2:3b",
+    "method": "few-shot",
+    "timestamp": "20260123_193647",
+    "total_samples": 100,
+    "valid_predictions": 100,
+    "unknown_predictions": 0
+  },
+  "metrics": {
+    "accuracy": 0.53,
+    "precision": 0.7648,
+    "recall": 0.5134,
+    "f1_score": 0.4673
+  },
+  "predictions": [
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Sci/Tech"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Sci/Tech"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Sci/Tech"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "World",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Sports",
+      "predicted_label": "Sports"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Sci/Tech",
+      "predicted_label": "World"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "Business"
+    },
+    {
+      "true_label": "Business",
+      "predicted_label": "World"
+    }
+  ]
+}
