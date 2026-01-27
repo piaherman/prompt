@@ -30,7 +30,7 @@ Text:
 Answer with only the label name.""",
   "intermediate": """You are a news classification system.
 
-Classify the following news article into exactly one of these categories:{labels_str}.
+Classify the following news article into exactly one of these categories:{labels}.
 
 Text:
 {text}
@@ -55,7 +55,7 @@ Answer with only the category name."""
 # Opcije: "simple", "intermediate", "advanced"
 PROMPT_CHOICE = "simple"
 # Nastavi na False, če nočeš vključiti system prompta
-INCLUDE_SYSTEM_PROMPT = True  
+INCLUDE_SYSTEM_PROMPT = True
 
 # 3. Zero-shot prompt funkcija
 def zero_shot_prompt(text):
@@ -67,6 +67,7 @@ dataset = load_dataset("fancyzhx/ag_news")
 test_data = dataset["test"].shuffle(seed=42).select(range(100))
 
 # 4. Model
+# gemma3:4b, ministral-3:3b, llama3.2:3b
 model_name = "llama3.2:3b"
 
 y_true = []

@@ -20,44 +20,61 @@ Do not provide explanations or additional text.
 
 INCLUDE_SYSTEM_PROMPT = True
 
+FEW_SHOT_EXAMPLES = [
+    {
+        "text": "Venezuelans Vote Early in Referendum on Chavez Rule (Reuters) "
+                "Reuters - Venezuelans turned out early and in large numbers on Sunday "
+                "to vote in a historic referendum that will either remove left-wing "
+                "President Hugo Chavez from office or give him a new mandate to govern "
+                "for the next two years.",
+        "label": "World"
+    },
+    {
+        "text": "Phelps, Thorpe Advance in 200 Freestyle (AP) "
+                "AP - Michael Phelps took care of qualifying for the Olympic "
+                "200-meter freestyle semifinals Sunday, and then found out he had been "
+                "added to the American team for the evening's 400 freestyle relay final.",
+        "label": "Sports"
+    },
+    {
+        "text": "Wall St. Bears Claw Back Into the Black (Reuters) "
+                "Reuters - Short-sellers, Wall Street's dwindling band of ultra-cynics, "
+                "are seeing green again.",
+        "label": "Business"
+    },
+    {
+        "text": "'Madden,' 'ESPN' Football Score in Different Ways (Reuters) "
+                "Reuters - EA Sports would like to think absenteeism was high because "
+                "Madden NFL 2005 was released, and fans took time off to play it.",
+        "label": "Sci/Tech"
+    }
+]
 # 3. Load dataset
 dataset = load_dataset("fancyzhx/ag_news")
-test_data = dataset["test"].shuffle(seed=42).select(range(2))
-
-# 4. Select FEW-SHOT examples (1 per class, from train set)
-few_shot_examples = []
-seen_labels = set()
-
-for item in dataset["train"]:
-    label = item["label"]
-    if label not in seen_labels:
-        few_shot_examples.append({
-            "text": item["text"],
-            "label": label_map[label]
-        })
-        seen_labels.add(label)
-    if len(seen_labels) == 4:
-        break
+test_data = dataset["test"].shuffle(seed=42).select(range(100))
 
 # 5. Few-shot prompt function
 def few_shot_prompt(text):
     examples_str = ""
-    for ex in few_shot_examples:
+    for i, ex in enumerate(FEW_SHOT_EXAMPLES, start=1):
         examples_str += f"""
+Example {i}:
 Text:
 {ex['text']}
-Label: {ex['label']}
+Category: {ex['label']}
 """
-
-    labels_str = ", ".join(labels)
 
     return f"""
 You are a news classification system.
 
 Task:
-Classify news articles into one of the following categories: {labels_str}.
+Classify news articles into one of the following categories:
+- World
+- Sports
+- Business
+- Sci/Tech
 
-Here are some labeled examples:
+Below are some labeled examples:
 {examples_str}
 
 Now classify the following article.
@@ -65,7 +82,7 @@ Now classify the following article.
 Text:
 {text}
 
-Answer with only the category name.
+Answer with ONLY the category name.
 """
 
 # 6. Model
@@ -74,7 +91,7 @@ model_name = "llama3.2:3b"
 y_true = []
 y_pred = []
 
-print(f"Running FEW-SHOT classification with model: {model_name}\n")
+print(f"Running few-shot classification with model: {model_name}\n")
 
 # 7. Run classification
 for item in test_data:
