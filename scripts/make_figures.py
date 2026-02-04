@@ -42,7 +42,7 @@ for method, sys_dict in files.items():
 # =========================
 plt.figure(figsize=(10, 5))
 plt.bar(labels, accs)
-plt.xticks(rotation=90)
+plt.xticks(rotation=45, ha="right")
 plt.ylabel("Accuracy")
 plt.title("Accuracy by Prompting Strategy and System Prompt")
 plt.ylim(0, 1)
@@ -55,7 +55,7 @@ plt.show()
 # =========================
 plt.figure(figsize=(10, 5))
 plt.bar(labels, f1s)
-plt.xticks(rotation=90)
+plt.xticks(rotation=45, ha="right")
 plt.ylabel("Macro F1-score")
 plt.title("Macro F1-score by Prompting Strategy and System Prompt")
 plt.ylim(0, 1)
